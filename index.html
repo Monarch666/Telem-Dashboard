@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MavLink Telemetry Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/uplot/dist/uPlot.min.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <nav class="sidebar glass-panel">
+      <div class="sidebar-header">
+        <img src="/logo.png" alt="Logo" class="logo-img"
+          onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjNThhNmZmIiBmaWxsLW9wYWNpdHk9IjAuMiIgcng9IjgiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM1OGE2ZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5XPC90ZXh0Pjwvc3ZnPg=='">
+        <h2>Wingspann Global Pvt Ltd</h2>
+      </div>
+
+      <div class="status-panel">
+        <div class="status-indicator">
+          <div class="dot disconnected" id="ws-dot"></div>
+          <span id="ws-status">Disconnected</span>
+        </div>
+        <div class="stats">
+          <div class="stat-row">
+            <span>Msg Rate:</span>
+            <span id="msg-rate" class="highlight">0 Hz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="parameter-section">
+        <h3>Active Streams</h3>
+        <p style="font-size:11px; color:var(--text-secondary); margin-bottom:10px;">Click stream to add chart</p>
+        <div class="stream-list" id="stream-list">
+          <!-- Dynamically populated stream toggles -->
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1 class="glow-text">Telemetry Dashboard</h1>
+        <div style="color: var(--text-secondary); font-size: 14px;">Select parameters from the sidebar to visualize.
+        </div>
+      </header>
+
+      <div class="grid" id="chart-grid">
+        <!-- Charts will go here -->
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
