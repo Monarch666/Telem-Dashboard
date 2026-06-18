@@ -115,6 +115,15 @@ async def main():
 
     # Start polling MAVLink in the background (will infinite loop and auto-reconnect)
     poll_task = asyncio.create_task(mavlink_poller(args.baud))
+    
+    # Handle task exceptions
+    def handle_exception(task):
+        try:
+            task.result()
+        except Exception as e:
+            print(f"MAVLink polling error: {e}")
+
+    poll_task.add_done_callback(handle_exception)
 
     # Keep server running
     await asyncio.Future()

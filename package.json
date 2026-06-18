@@ -1,12 +1,14 @@
 {
-  "name": "frontend",
+  "name": "telem-dashboard",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "python server.py",
+    "start": "start /B python server.py && vite"
   },
   "devDependencies": {
     "vite": "^7.3.1"

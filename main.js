@@ -1,5 +1,4 @@
-import uPlot from 'uplot';
-import 'uplot/dist/uPlot.min.css';
+// uPlot is loaded globally via CDN in index.html
 
 // State
 const ws = new WebSocket('ws://localhost:8765');
